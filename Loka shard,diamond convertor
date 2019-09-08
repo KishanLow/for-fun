@@ -3,18 +3,29 @@
 diamond = 12
 shard = 1/12
 stack = 64
+core = 64
+cluster = 8
+block = 9
 
 convert = input("Do you want to convert your shards or diamonds?")
 
 if convert == "shards":
     how_many = int(input("How many shards do you want converted?"))
-    diamonds = shard * how_many
+    diamonds = int(shard * how_many)
     print(diamonds)
-    db = diamonds/stack
-    print(db,"diamond blocks")
+    db = int(diamonds/block)
+    diamonds -= (db*block)
+    print("Diamond blocks:",db, "diamonds:",diamonds)
 
 
 if convert == "diamonds":
     how_many_two = int(input("How many diamonds do you want converted?"))
     shards = diamond * how_many_two
     print(shards)
+
+    cores = int(shards / core)
+    shards -= cores * core
+    clusters = int(shards / cluster)
+    shards -= cores * clusters
+
+    print("Cores:", cores, ", Clusters:", clusters, ", Shards:", shards)
