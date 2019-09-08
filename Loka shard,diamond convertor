@@ -1,0 +1,20 @@
+#Loka shard/diamond convertor
+
+diamond = 12
+shard = 1/12
+stack = 64
+
+convert = input("Do you want to convert your shards or diamonds?")
+
+if convert == "shards":
+    how_many = int(input("How many shards do you want converted?"))
+    diamonds = shard * how_many
+    print(diamonds)
+    db = diamonds/stack
+    print(db,"diamond blocks")
+
+
+if convert == "diamonds":
+    how_many_two = int(input("How many diamonds do you want converted?"))
+    shards = diamond * how_many_two
+    print(shards)
