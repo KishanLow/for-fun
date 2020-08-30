@@ -1,0 +1,55 @@
+world
+name	continent	area	population	gdp
+Afghanistan	Asia	652230	25500100	20343000000
+Albania	Europe	28748	2831741	12960000000
+Algeria	Africa	2381741	37100000	188681000000
+Andorra	Europe	468	78115	3712000000
+Angola	Africa	1246700	20609294	100990000000
+....
+
+
+SELECT population FROM world
+  WHERE name = 'Germany'
+  
+SELECT name, population FROM world
+  WHERE name IN ('Sweden', 'Norway', 'Denmark');
+  
+SELECT name, area FROM world
+  WHERE area BETWEEN 200000 AND 250000
+  
+  name	continent
+Afghanistan	Asia
+Albania	Europe
+Algeria	Africa
+Andorra	Europe
+Angola	Africa
+....
+
+\\\COUNTRIES WHICH START WITH Y
+
+SELECT name FROM world
+  WHERE name LIKE 'Y%' #OUTPUT Yemen
+  
+\\\COUNTRIES WHICH END WITH Y
+
+SELECT name FROM world
+  WHERE name LIKE '%Y'
+  
+\\\COUNTRIES WHICH HAVE AN X IN THEM
+
+SELECT name FROM world
+  WHERE name LIKE '%X%'
+
+\\\COUNTRIES THAT START WITH A C AND END WITH 'IA'
+
+SELECT name FROM world
+  WHERE name LIKE 'C%ia%'
+  
+\\\COUNTRIES THAT HAVE T AS A SECOND LETTER
+
+SELECT name FROM world
+ WHERE name LIKE '_t%'
+ORDER BY name
+
+'''TO BE CONTINUED!'''
+  
